@@ -4,7 +4,7 @@ window.onload = async () => {
 
     produtos = await obterProdutos();
 
-    popularCategorias();
+    // popularCategorias();
 
     renderizar(produtos);
 
@@ -12,42 +12,42 @@ window.onload = async () => {
         .getElementById("busca")
         .addEventListener("input", filtrar);
 
-    document
-        .getElementById("categoria")
-        .addEventListener("change", filtrar);
+    // document
+    //     .getElementById("categoria")
+    //     .addEventListener("change", filtrar);
 
-    document
-        .getElementById("estado")
-        .addEventListener("change", filtrar);
+    // document
+    //     .getElementById("estado")
+    //     .addEventListener("change", filtrar);
 
-    document
-        .getElementById("precoMin")
-        .addEventListener("input", filtrar);
+    // document
+    //     .getElementById("precoMin")
+    //     .addEventListener("input", filtrar);
 
-    document
-        .getElementById("precoMax")
-        .addEventListener("input", filtrar);
+    // document
+    //     .getElementById("precoMax")
+    //     .addEventListener("input", filtrar);
 };
 
-function popularCategorias() {
+// function popularCategorias() {
 
-    const categorias =
-        [...new Set(produtos.map(x => x.categoria))];
+//     const categorias =
+//         [...new Set(produtos.map(x => x.categoria))];
 
-    const select =
-        document.getElementById("categoria");
+//     const select =
+//         document.getElementById("categoria");
 
-    categorias.forEach(cat => {
+//     categorias.forEach(cat => {
 
-        const option =
-            document.createElement("option");
+//         const option =
+//             document.createElement("option");
 
-        option.value = cat;
-        option.textContent = cat;
+//         option.value = cat;
+//         option.textContent = cat;
 
-        select.appendChild(option);
-    });
-}
+//         select.appendChild(option);
+//     });
+// }
 
 function filtrar() {
 
@@ -55,28 +55,28 @@ function filtrar() {
         document.getElementById("busca")
             .value.toLowerCase();
 
-    const categoria =
-        document.getElementById("categoria")
-            .value;
+    // const categoria =
+    //     document.getElementById("categoria")
+    //         .value;
 
-    const estado =
-        document.getElementById("estado")
-            .value;
+    // const estado =
+    //     document.getElementById("estado")
+    //         .value;
 
-    const precoMin =
-        Number(document.getElementById("precoMin").value || 0);
+    // const precoMin =
+    //     Number(document.getElementById("precoMin").value || 0);
 
-    const precoMax =
-        Number(document.getElementById("precoMax").value || 999999);
+    // const precoMax =
+    //     Number(document.getElementById("precoMax").value || 999999);
 
     const resultado = produtos.filter(produto => {
 
         return (
             produto.nome.toLowerCase().includes(busca)
-            && (!categoria || produto.categoria === categoria)
-            && (!estado || produto.estadoDoItem === estado)
-            && produto.preco >= precoMin
-            && produto.preco <= precoMax
+            //&& (!categoria || produto.categoria === categoria)
+            //&& (!estado || produto.estadoDoItem === estado)
+            //&& produto.preco >= precoMin
+            //&& produto.preco <= precoMax
         );
     });
 
@@ -96,7 +96,7 @@ function renderizar(lista) {
             <article class="card">
 
                 <img
-                    src="imagens/${produto.imagem}"
+                    src="imagens/produtos/${produto.imagem}"
                     loading="lazy">
 
                 <h3>${produto.nome}</h3>

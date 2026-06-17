@@ -15,7 +15,7 @@ window.onload = async () => {
         <div class="produto-page">
 
             <img
-                src="imagens/${produto.imagem}">
+                src="imagens/produtos/${produto.imagem}">
 
             <div>
 
