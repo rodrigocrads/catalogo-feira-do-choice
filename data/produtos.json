@@ -1,0 +1,26 @@
+[
+  {
+    "codigo": "BC03",
+    "nome": "Camisa Polo Azul",
+    "descricao": "Camisa em excelente estado.",
+    "preco": 25,
+    "categoria": "Roupas",
+    "imagem": "bc03.jpg",
+    "tamanho": "M",
+    "estadoDoItem": "seminovo",
+    "descricaoDoDefeito": null,
+    "foiVendido": false
+  },
+  {
+    "codigo": "BC04",
+    "nome": "Tênis All Star",
+    "descricao": "Pouco uso.",
+    "preco": 80,
+    "categoria": "Calçados",
+    "imagem": "bc04.jpg",
+    "tamanho": "41",
+    "estadoDoItem": "usado",
+    "descricaoDoDefeito": null,
+    "foiVendido": false
+  }
+]

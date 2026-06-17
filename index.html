@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brechó do Choice</title>
+
+    <link rel="stylesheet" href="css/site.css">
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Catálogo de Produtos</h1>
+            <p>Peças incríveis com preços que cabem no bolso.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <aside class="filtros">
+
+            <h3>Filtrar Produtos</h3>
+
+            <select id="categoria">
+                <option value="">Todas categorias</option>
+            </select>
+
+            <select id="estado">
+                <option value="">Todos estados</option>
+                <option value="novo">Novo</option>
+                <option value="seminovo">Seminovo</option>
+                <option value="usado">Usado</option>
+            </select>
+
+            <input type="number" id="precoMin" placeholder="Preço mínimo">
+
+            <input type="number" id="precoMax" placeholder="Preço máximo">
+
+        </aside>
+
+        <section class="conteudo">
+
+            <div class="toolbar">
+
+                <input type="text" id="busca" placeholder="Buscar produto">
+
+            </div>
+
+            <div id="produtos" class="grid-produtos"></div>
+
+        </section>
+
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/catalogo.js"></script>
+
+</body>
+
+</html>
