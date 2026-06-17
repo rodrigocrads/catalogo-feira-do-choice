@@ -5,20 +5,71 @@
 }
 
 body{
-    font-family:Arial,sans-serif;
+    font-family: 'Poppins', sans-serif;
     background:#fafafa;
 }
 
 .container{
     display:grid;
-    grid-template-columns:280px 1fr;
-    gap:20px;
-    padding:20px;
+    grid-template-columns: 280px 1fr;
+    gap: 20px;
+    padding: 20px;
 }
 
-.hero{
-    padding:40px;
-    background:#f5efe8;
+.top-bar {
+    background:#2a190a;
+    color: #FFF;
+    padding: 20px 10px;
+}
+
+.top-bar-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    color: #FFF;
+    text-decoration: none;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 26px;
+}
+
+/* .logo img {
+    width: 120px;
+} */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 80px 20px;
+    color: #fff;
+}
+
+.hero::before {
+    content: "";
+    background-image: url('../imagens/background-roupas-no-cabide.png'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Faz a imagem ocupar 100% do tamanho do bloco */
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    
+    opacity: 0.4;
+    z-index: -1;
+}
+
+.hero-content {
+    color:#2a190a;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .filtros{
