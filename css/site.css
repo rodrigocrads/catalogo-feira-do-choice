@@ -1,9 +1,3 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 body{
     font-family: 'Poppins', sans-serif;
     background:#fafafa;
@@ -104,6 +98,10 @@ input.busca{
     background:white;
     border-radius:12px;
     padding:15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #222;
 }
 
 .card img{
@@ -112,9 +110,17 @@ input.busca{
     object-fit:cover;
 }
 
+.categoria {
+    color: #666;
+    font-size: 0.8rem;
+}
+
+.estado {
+    color: #666;
+}
+
 .preco{
     display:block;
-    margin:10px 0;
     font-size:20px;
     font-weight:bold;
 }
@@ -124,18 +130,24 @@ input.busca{
     border:none;
     padding:12px;
     background:#25D366;
-    color:white;
+    color: #FFF;
     border-radius:6px;
     cursor:pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
 }
 
 .btn-secundario{
-    display:block;
-    text-align:center;
-    margin-bottom:10px;
-    padding:12px;
-    text-decoration:none;
-    border:1px solid #ddd;
+    display: block;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    color: #222;
+    border-radius: 6px;
 }
 
 .produto-page{
@@ -147,6 +159,26 @@ input.busca{
 
 .produto-page img{
     width:100%;
+}
+
+.selector {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 10px 0 0;
+}
+
+.novo {
+    background-color: #28a745;
+}
+
+.seminovo {
+    background-color: #ffc107;
+}
+
+.usado {
+    background-color: #dc3545;
 }
 
 @media(max-width:768px){

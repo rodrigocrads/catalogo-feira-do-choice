@@ -19,6 +19,8 @@ window.onload = async () => {
 
             <div>
 
+                <p class="categoria">${produto.categoria}</p>
+
                 <h1>${produto.nome}</h1>
 
                 <h2>
