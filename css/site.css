@@ -85,6 +85,14 @@ body{
     padding:10px;
 }
 
+input.busca{
+    height: 40px;
+    width: 100%;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
 .grid-produtos{
     display:grid;
     grid-template-columns:
