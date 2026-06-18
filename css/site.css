@@ -179,8 +179,9 @@ input.busca{
     padding: 20px 10px;
 }
 
-.produto-page img{
-    width:100%;
+.produto-page__imagem img {
+    width: 100%;
+    border-radius: 6px;
 }
 
 .produto-page__nome {

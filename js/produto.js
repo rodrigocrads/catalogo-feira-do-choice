@@ -14,9 +14,9 @@ window.onload = async () => {
         .innerHTML = `
         <div class="produto-page">
 
-            <img src="imagens/produtos/${produto.imagem}">
+            <div class="produto-page__imagem"><img src="imagens/produtos/${produto.imagem}"></div>
 
-            <h1 class="produto-page__nome">${produto.nome}</h1>
+            <h1 class="produto-page__nome">${produto.nome || limitarTexto(produto.descricao)}</h1>
 
             <h2 class="produto-page__preco">
                 ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(produto.preco.toFixed(2))}
@@ -77,3 +77,10 @@ Preço: R$ ${produto.preco}`;
         window.open(url, "_blank");
     };
 };
+
+function limitarTexto(texto) {
+    if (texto.length <= 50) {
+        return texto;
+    }
+    return texto.slice(0, 47) + '...';
+}
