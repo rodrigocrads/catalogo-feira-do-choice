@@ -1,12 +1,28 @@
 let produtos = [];
+let produtosFiltrados = [];
+
+const ITENS_POR_PAGINA = 10;
+let paginaAtual = 1;
 
 window.onload = async () => {
 
     produtos = await obterProdutos();
 
+    produtosFiltrados = [...produtos];
+    
+
     // popularCategorias();
 
-    renderizar(produtos);
+    renderizarPagina();
+
+    renderizarPaginacao();
+
+    registrarEventos();
+
+    // renderizar(produtos);
+};
+
+function registrarEventos() {
 
     document
         .getElementById("busca")
@@ -27,7 +43,7 @@ window.onload = async () => {
     // document
     //     .getElementById("precoMax")
     //     .addEventListener("input", filtrar);
-};
+}
 
 // function popularCategorias() {
 
@@ -69,7 +85,7 @@ function filtrar() {
     // const precoMax =
     //     Number(document.getElementById("precoMax").value || 999999);
 
-    const resultado = produtos.filter(produto => {
+    produtosFiltrados = produtos.filter(produto => {
 
         return (
             produto.nome.toLowerCase().includes(busca)
@@ -80,7 +96,10 @@ function filtrar() {
         );
     });
 
-    renderizar(resultado);
+    paginaAtual = 1;
+
+    renderizarPagina();
+    renderizarPaginacao();
 }
 
 function renderizar(lista) {
@@ -117,6 +136,94 @@ function renderizar(lista) {
 
             </article>
         `;
+    });
+}
+
+function renderizarPagina() {
+
+    const inicio =
+        (paginaAtual - 1) * ITENS_POR_PAGINA;
+
+    const fim =
+        inicio + ITENS_POR_PAGINA;
+
+    const produtosPagina =
+        produtosFiltrados.slice(inicio, fim);
+
+    renderizar(produtosPagina);
+}
+
+function renderizarPaginacao() {
+
+    const container =
+        document.getElementById("paginacao");
+
+    container.innerHTML = "";
+
+    const totalPaginas =
+        Math.ceil(
+            produtosFiltrados.length /
+            ITENS_POR_PAGINA
+        );
+
+    if (totalPaginas <= 1)
+        return;
+
+    // anterior
+
+    if (paginaAtual > 1) {
+
+        container.innerHTML += `
+            <button
+                class="btn-pagina"
+                onclick="irParaPagina(${paginaAtual - 1})">
+                ‹
+            </button>
+        `;
+    }
+
+    for (
+        let pagina = 1;
+        pagina <= totalPaginas;
+        pagina++
+    ) {
+
+        container.innerHTML += `
+            <button
+                class="
+                    btn-pagina
+                    ${pagina === paginaAtual ? 'ativa' : ''}
+                "
+                onclick="irParaPagina(${pagina})">
+                ${pagina}
+            </button>
+        `;
+    }
+
+    // próxima
+
+    if (paginaAtual < totalPaginas) {
+
+        container.innerHTML += `
+            <button
+                class="btn-pagina"
+                onclick="irParaPagina(${paginaAtual + 1})">
+                ›
+            </button>
+        `;
+    }
+}
+
+function irParaPagina(numero) {
+
+    paginaAtual = numero;
+
+    renderizarPagina();
+    renderizarPaginacao();
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
     });
 }
 

@@ -1,0 +1,39 @@
+.paginacao{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+
+    margin-top:32px;
+}
+
+.btn-pagina{
+
+    width:40px;
+    height:40px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    background:#fff;
+
+    box-shadow:
+        0 2px 4px rgba(0,0,0,.08);
+
+    transition:.2s;
+}
+
+.btn-pagina:hover{
+
+    background:#f5efe8;
+}
+
+.btn-pagina.ativa{
+
+    background:#5A3B24;
+
+    color:white;
+}
