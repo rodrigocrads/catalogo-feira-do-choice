@@ -129,7 +129,7 @@ input.busca{
     width:100%;
     border:none;
     padding:12px;
-    background:#25D366;
+    background: #2a190a; /*#25D366;*/
     color: #FFF;
     border-radius:6px;
     cursor:pointer;
