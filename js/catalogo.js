@@ -151,6 +151,8 @@ function renderizarPagina() {
         produtosFiltrados.slice(inicio, fim);
 
     renderizar(produtosPagina);
+
+    atualizarIndicadores();
 }
 
 function renderizarPaginacao() {
@@ -225,6 +227,36 @@ function irParaPagina(numero) {
         top: 0,
         behavior: "smooth"
     });
+}
+
+function atualizarIndicadores() {
+
+    const totalProdutos =
+        produtosFiltrados.length;
+
+    if (totalProdutos === 0) {
+
+        document.getElementById(
+            "totalEncontrados"
+        ).textContent =
+            "Nenhum produto encontrado";
+
+        return;
+    }
+
+    const inicio =
+        ((paginaAtual - 1) * ITENS_POR_PAGINA) + 1;
+
+    const fim =
+        Math.min(
+            paginaAtual * ITENS_POR_PAGINA,
+            totalProdutos
+        );
+
+    document.getElementById(
+        "totalEncontrados"
+    ).textContent =
+        `Mostrando ${inicio}–${fim} de ${totalProdutos} produtos`;
 }
 
 function pedirProduto(codigo) {
