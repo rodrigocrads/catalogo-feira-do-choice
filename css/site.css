@@ -157,6 +157,8 @@ input.busca{
     justify-content: center;
     align-items: center;
     gap: 8px;
+    position:relative;
+    z-index: 2;
 }
 
 .btn-secundario{
