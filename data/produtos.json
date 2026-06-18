@@ -2,7 +2,7 @@
   {
     "codigo": "BC03",
     "nome": "Camisa Polo Azul",
-    "descricao": "Camisa em excelente estado.",
+    "descricao": "Camisa em excelente estado Pouco uso, sem rasgos ou manchas. Perfeita para compor vários looks.",
     "preco": 25,
     "categoria": "Roupas",
     "imagem": "BC03.jpg",
@@ -20,7 +20,7 @@
     "imagem": "BC04.jpg",
     "tamanho": "41",
     "estadoDoItem": "usado",
-    "descricaoDoDefeito": null,
+    "descricaoDoDefeito": "Desgastado na parte da sola, mas ainda em bom estado para uso.",
     "foiVendido": false
   }
 ]

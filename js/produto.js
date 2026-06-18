@@ -14,35 +14,50 @@ window.onload = async () => {
         .innerHTML = `
         <div class="produto-page">
 
-            <img
-                src="imagens/produtos/${produto.imagem}">
+            <img src="imagens/produtos/${produto.imagem}">
 
-            <div>
+            <h1 class="produto-page__nome">${produto.nome}</h1>
 
-                <p class="categoria">${produto.categoria}</p>
+            <h2 class="produto-page__preco">
+                ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(produto.preco.toFixed(2))}
+            </h2>
 
-                <h1>${produto.nome}</h1>
+            <p class="produto-page__estado">
+                <span class="selector ${produto.estadoDoItem.toLowerCase()}"></span>Estado do item: ${produto.estadoDoItem}
+            </p>
 
-                <h2>
-                    R$ ${produto.preco.toFixed(2)}
-                </h2>
+            <div class="produto-page__detalhes">
+                <p><strong>Código:</strong> ${produto.codigo}</p>
+                
+                <p><strong>Categoria:</strong> ${produto.categoria}</p>
 
-                <p>
-                    ${produto.descricao}
-                </p>
+                <p><strong>Tamanho:</strong> ${produto.tamanho}</p>
 
-                <p>
-                    Estado:
-                    ${produto.estadoDoItem}
-                </p>
+                <div class="produto-page__descricao">
+                    <p><strong>Descrição geral:</strong></p>
+                    <p>
+                        ${produto.descricao}
+                    </p>
+                </div>
 
-                <button
-                    class="btn-whatsapp"
-                    onclick="pedirProduto()">
-                    Pedir via WhatsApp
-                </button>
+                <p><strong>Possui algum defeito?</strong> ${produto.descricaoDoDefeito ? "Sim" : "Não"}</p>
 
+                ${produto.descricaoDoDefeito ? `
+                    <div class="produto-page__descricao-defeito">
+                        <p><strong>Descrição do defeito:</strong></p>
+                        <p>
+                            ${produto.descricaoDoDefeito || "Nenhum defeito informado."}
+                        </p>
+                    </div>
+                ` : ""}
             </div>
+
+
+            <button
+                class="btn-whatsapp"
+                onclick="pedirProduto()">
+                Pedir via WhatsApp
+            </button>
 
         </div>
     `;
@@ -57,7 +72,7 @@ Código: ${produto.codigo}
 Preço: R$ ${produto.preco}`;
 
         const url =
-            `https://wa.me/5521999999999?text=${encodeURIComponent(mensagem)}`;
+            `https://wa.me/5521971216282?text=${encodeURIComponent(mensagem)}`;
 
         window.open(url, "_blank");
     };
