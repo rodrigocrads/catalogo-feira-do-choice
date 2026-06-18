@@ -25,8 +25,18 @@ window.onload = async () => {
 function registrarEventos() {
 
     document
+        .getElementById("btnBuscar")
+        .addEventListener("click", filtrar);
+
+    document
         .getElementById("busca")
-        .addEventListener("input", filtrar);
+        .addEventListener("keydown", e => {
+
+            if (e.key === "Enter") {
+
+                filtrar();
+            }
+        });
 
     // document
     //     .getElementById("categoria")
