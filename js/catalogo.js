@@ -104,7 +104,7 @@ function renderizar(lista) {
                 <h3>${produto.nome}</h3>
 
                 <span class="preco">
-                    R$ ${produto.preco.toFixed(2)}
+                    ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(produto.preco.toFixed(2))}
                 </span>
 
                 <p class="estado"><span class="selector ${produto.estadoDoItem.toLowerCase()}"></span>Estado: ${produto.estadoDoItem}</p>
