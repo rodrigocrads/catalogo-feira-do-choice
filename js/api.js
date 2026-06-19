@@ -1,5 +1,5 @@
 //const API_URL = './data/produtos.json';
-const API_URL = 'https://script.google.com/macros/s/AKfycbzJTScc44LAsya4XlCsbuozpN1gik6LFEocXy9uMn8na79UFzk3e8bolWdxdnPLC498/exec';
+const API_URL = 'https://script.google.com/macros/s/AKfycbwxEaIHhiQYZRF7MaRqetiUrPQubcsWae_48ZjpPNskL2XY7dFmBFZZP2BCijL0RQyf/exec';
 
 async function obterProdutos() {
 
