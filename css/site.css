@@ -8,6 +8,8 @@ body{
     grid-template-columns: 1fr;
     gap: 20px;
     padding: 20px;
+    max-width: 1280px;
+    margin: auto;
 }
 
 .top-bar {
@@ -39,6 +41,8 @@ body{
     overflow: hidden;
     padding: 80px 20px;
     color: #fff;
+    max-width: 1280px;
+    margin: auto;
 }
 
 .hero::before {

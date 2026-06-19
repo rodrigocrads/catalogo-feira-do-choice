@@ -1,7 +1,7 @@
 let produtos = [];
 let produtosFiltrados = [];
 
-const ITENS_POR_PAGINA = 10;
+const ITENS_POR_PAGINA = 12;
 let paginaAtual = 1;
 
 window.onload = async () => {
