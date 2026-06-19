@@ -26,6 +26,8 @@ window.onload = async () => {
 
         renderizarPaginacao();
 
+        registrarEventos();
+
     }
     catch(error) {
 
