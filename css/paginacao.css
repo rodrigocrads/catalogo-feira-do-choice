@@ -4,6 +4,7 @@
     align-items:center;
     gap:8px;
     margin-top:32px;
+    flex-wrap: wrap;
 }
 
 .btn-pagina{
@@ -37,5 +38,5 @@
     color: #666;
     font-size: 14px;
     margin: 15px 0;
-    flex-wrap: wrap;
+
 }
