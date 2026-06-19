@@ -13,6 +13,12 @@ window.onload = async () => {
         produtos =
             await obterProdutos();
 
+        // cria cache ao chamar a API pela primeira vez
+        sessionStorage.setItem(
+            'produtos',
+            JSON.stringify(produtos)
+        );
+
         produtosFiltrados =
             [...produtos];
 

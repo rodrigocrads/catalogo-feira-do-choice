@@ -4,9 +4,12 @@ window.onload = async () => {
         new URLSearchParams(window.location.search)
             .get("codigo");
 
-    const produtos =
-        await obterProdutos();
+    const produtosEmCache = sessionStorage.getItem('produtos');
 
+    const produtos = produtosEmCache
+        ? JSON.parse(produtosEmCache)
+        : await obterProdutos();
+    
     const produto =
         produtos.find(x => x.codigo === codigo);
 
