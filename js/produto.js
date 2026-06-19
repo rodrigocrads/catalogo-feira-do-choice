@@ -14,7 +14,7 @@ window.onload = async () => {
         .innerHTML = `
         <div class="produto-page">
 
-            <div class="produto-page__imagem"><img src="imagens/produtos/${produto.imagem}"></div>
+            <div class="produto-page__imagem"><img src="imagens/produtos/${produto.codigo}.jpg"></div>
 
             <h1 class="produto-page__nome">${produto.nome || limitarTexto(produto.descricao)}</h1>
 

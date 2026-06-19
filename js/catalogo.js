@@ -138,7 +138,7 @@ function renderizar(lista) {
             <article class="card">
 
                 <img
-                    src="imagens/produtos/${produto.imagem}"
+                    src="imagens/produtos/${produto.codigo}.jpg"
                     loading="lazy">
 
                 <p class="categoria">${produto.categoria}</p>
