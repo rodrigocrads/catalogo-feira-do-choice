@@ -149,7 +149,7 @@ function renderizar(lista) {
 
                 <p class="categoria">${produto.categoria}</p>
 
-                <h3><a class="link-principal" href="produto.html?codigo=${produto.codigo}">${produto.nome || limitarTexto(produto.descricao)}</a></h3>
+                <h3><a class="link-principal" href="produto.html?codigo=${produto.codigo}">${limitarTexto(produto.nome || produto.descricao)}</a></h3>
 
                 <span class="preco">
                     ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(produto.preco.toFixed(2))}

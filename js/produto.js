@@ -19,7 +19,7 @@ window.onload = async () => {
 
             <div class="produto-page__imagem"><img src="imagens/produtos/${produto.codigo}.jpg"></div>
 
-            <h1 class="produto-page__nome">${produto.nome || limitarTexto(produto.descricao)}</h1>
+            <h1 class="produto-page__nome">${limitarTexto(produto.nome || produto.descricao)}</h1>
 
             <h2 class="produto-page__preco">
                 ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(produto.preco.toFixed(2))}
