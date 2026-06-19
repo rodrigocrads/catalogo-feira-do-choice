@@ -23,7 +23,7 @@ window.onload = async () => {
             </h2>
 
             <p class="produto-page__estado">
-                <span class="selector ${produto.estadoDoItem.toLowerCase()}"></span>Estado do item: ${produto.estadoDoItem}
+                <span class="selector ${produto.estadoDoItem.toLowerCase().replace(" ", "-")}"></span>Estado do item: ${produto.estadoDoItem}
             </p>
 
             <div class="produto-page__detalhes">

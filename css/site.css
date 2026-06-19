@@ -177,6 +177,8 @@ input.busca{
     grid-template-columns: 1fr;
     gap: 10px;
     padding: 20px 10px;
+    max-width: 768px;
+    margin: auto;
 }
 
 .produto-page__imagem img {
@@ -232,11 +234,11 @@ input.busca{
     background-color: #28a745;
 }
 
-.seminovo {
+.bom-estado {
     background-color: #ffc107;
 }
 
-.usado {
+.com-defeito {
     background-color: #dc3545;
 }
 
