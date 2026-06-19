@@ -72,7 +72,7 @@ window.onload = async () => {
         const mensagem =
             `Olá! Tenho interesse no produto:
 
-${produto.nome}
+${produto.nome || produto.descricao}
 Código: ${produto.codigo}
 Preço: R$ ${produto.preco}`;
 

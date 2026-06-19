@@ -291,7 +291,7 @@ function pedirProduto(codigo) {
     const produto = produtos.find(x => x.codigo === codigo);
     const mensagem =
         `Olá! Tenho interesse no produto:
-        ${produto.nome}
+        ${produto.nome || produto.descricao}
         Código: ${produto.codigo}
         Preço: R$ ${produto.preco}
         `;
