@@ -6,20 +6,33 @@ let paginaAtual = 1;
 
 window.onload = async () => {
 
-    produtos = await obterProdutos();
+    mostrarLoading();
 
-    produtosFiltrados = [...produtos];
-    
+    try {
 
-    // popularCategorias();
+        produtos =
+            await obterProdutos();
 
-    renderizarPagina();
+        produtosFiltrados =
+            [...produtos];
 
-    renderizarPaginacao();
+        renderizarPagina();
 
-    registrarEventos();
+        renderizarPaginacao();
 
-    // renderizar(produtos);
+    }
+    catch(error) {
+
+        console.error(error);
+
+        alert(
+            'Não foi possível carregar os produtos.'
+        );
+    }
+    finally {
+
+        esconderLoading();
+    }
 };
 
 function registrarEventos() {
@@ -293,4 +306,39 @@ function limitarTexto(texto) {
         return texto;
     }
     return texto.slice(0, 47) + '...';
+}
+
+function mostrarLoading() {
+
+    const loading =
+        document.getElementById('loading');
+
+    loading.style.display = 'grid';
+
+    loading.innerHTML = '';
+
+    for(let i = 0; i < 8; i++) {
+
+        loading.innerHTML += `
+            <div class="skeleton-card">
+
+                <div class="skeleton skeleton-imagem"></div>
+
+                <div class="skeleton skeleton-titulo"></div>
+
+                <div class="skeleton skeleton-texto"></div>
+
+                <div class="skeleton skeleton-texto"></div>
+
+                <div class="skeleton skeleton-preco"></div>
+            </div>
+        `;
+    }
+}
+
+function esconderLoading() {
+
+    document.getElementById(
+        'loading'
+    ).style.display = 'none';
 }
