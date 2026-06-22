@@ -34,8 +34,6 @@ window.onload = async () => {
                 
                 <p><strong>Categoria:</strong> ${produto.categoria}</p>
 
-                <p><strong>Tamanho:</strong> ${produto.tamanho}</p>
-
                 <div class="produto-page__descricao">
                     <p><strong>Descrição geral:</strong></p>
                     <p>
