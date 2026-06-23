@@ -25,10 +25,6 @@ window.onload = async () => {
                 ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(produto.preco.toFixed(2))}
             </h2>
 
-            <p class="produto-page__estado">
-                <span class="selector ${produto.estadoDoItem.toLowerCase().replace(" ", "-")}"></span>Estado do item: ${produto.estadoDoItem}
-            </p>
-
             <div class="produto-page__detalhes">
                 <p><strong>Código:</strong> ${produto.codigo}</p>
                 

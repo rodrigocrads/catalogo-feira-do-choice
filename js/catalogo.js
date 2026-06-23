@@ -157,8 +157,6 @@ function renderizar(lista) {
                     ${new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(produto.preco.toFixed(2))}
                 </span>
 
-                <p class="estado"><span class="selector ${produto.estadoDoItem.toLowerCase().replace(" ", "-")}"></span>Estado: ${produto.estadoDoItem}</p>
-
                <button
                     class="btn-whatsapp"
                     onclick="pedirProduto('${produto.codigo}')">
