@@ -76,7 +76,6 @@ body{
     border-radius: 12px;
     margin: 30px 20px;
     padding: 16px 20px;
-    width: 100%;
     max-width: 1280px;
 }
 
@@ -405,5 +404,6 @@ input.busca{
 @media(min-width: 1280px){
     .aviso-importante {
         margin: 30px auto;
+        width: 100%;
     }
 }
