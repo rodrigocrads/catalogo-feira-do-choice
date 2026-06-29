@@ -20,8 +20,7 @@ window.onload = async () => {
 
         popularCategorias(produtos);
 
-        produtosFiltrados =
-            [...produtos];
+        produtosFiltrados = [...produtos];
 
         renderizarPagina();
 
@@ -46,19 +45,20 @@ window.onload = async () => {
 
 function registrarEventos() {
 
-    document
-        .getElementById("btnBuscar")
-        .addEventListener("click", filtrar);
+    // document
+    //     .getElementById("btnBuscar")
+    //     .addEventListener("click", filtrar);
 
     document
         .getElementById("busca")
-        .addEventListener("keydown", e => {
+        .addEventListener("input", filtrar);
+        // .addEventListener("keydown", e => {
 
-            if (e.key === "Enter") {
+        //     if (e.key === "Enter") {
 
-                filtrar();
-            }
-        });
+        //         filtrar();
+        //     }
+        // });
 
     document
         .getElementById("categoria")
