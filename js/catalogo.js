@@ -9,7 +9,6 @@ window.onload = async () => {
     mostrarLoading();
 
     try {
-
         produtos =
             await obterProdutos();
 
@@ -18,6 +17,8 @@ window.onload = async () => {
             'produtos',
             JSON.stringify(produtos)
         );
+
+        popularCategorias(produtos);
 
         produtosFiltrados =
             [...produtos];
@@ -59,9 +60,9 @@ function registrarEventos() {
             }
         });
 
-    // document
-    //     .getElementById("categoria")
-    //     .addEventListener("change", filtrar);
+    document
+        .getElementById("categoria")
+        .addEventListener("change", filtrar);
 
     // document
     //     .getElementById("estado")
@@ -76,25 +77,23 @@ function registrarEventos() {
     //     .addEventListener("input", filtrar);
 }
 
-// function popularCategorias() {
+function popularCategorias(produtos) {
+    const categorias =
+        [...new Set(produtos.map(x => x.categoria))];
 
-//     const categorias =
-//         [...new Set(produtos.map(x => x.categoria))];
+    const select =
+        document.getElementById("categoria");
 
-//     const select =
-//         document.getElementById("categoria");
+    categorias.forEach(cat => {
+        const option =
+            document.createElement("option");
 
-//     categorias.forEach(cat => {
+        option.value = cat;
+        option.textContent = cat;
 
-//         const option =
-//             document.createElement("option");
-
-//         option.value = cat;
-//         option.textContent = cat;
-
-//         select.appendChild(option);
-//     });
-// }
+        select.appendChild(option);
+    });
+}
 
 function filtrar() {
 
@@ -102,9 +101,9 @@ function filtrar() {
         document.getElementById("busca")
             .value.toLowerCase();
 
-    // const categoria =
-    //     document.getElementById("categoria")
-    //         .value;
+    const categoria =
+        document.getElementById("categoria")
+            .value;
 
     // const estado =
     //     document.getElementById("estado")
@@ -120,7 +119,7 @@ function filtrar() {
 
         return (
             produto.nome.toLowerCase().includes(busca)
-            //&& (!categoria || produto.categoria === categoria)
+            && (!categoria || produto.categoria === categoria)
             //&& (!estado || produto.estadoDoItem === estado)
             //&& produto.preco >= precoMin
             //&& produto.preco <= precoMax

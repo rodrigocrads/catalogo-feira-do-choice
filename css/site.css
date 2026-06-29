@@ -112,6 +112,13 @@ body{
     margin-top: 20px;
 }
 
+.toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
 .filtros{
     background:white;
     padding:20px;
@@ -125,7 +132,7 @@ body{
     padding:10px;
 }
 
-input.busca{
+input.busca {
     height: 40px;
     width: 100%;
     padding: 10px 20px;
@@ -296,13 +303,13 @@ input.busca{
     left: 5%;
 }
 
-.campo-busca{
+.campo-busca, .campo-categoria {
     position: relative;
     width: 100%;
     max-width: 500px;
 }
 
-.campo-busca input{
+.campo-busca input, .campo-categoria select{
     width: 100%;
     height: 48px;
     padding: 0 52px 0 16px;
@@ -313,7 +320,7 @@ input.busca{
     transition: .2s;
 }
 
-.campo-busca input:focus{
+.campo-busca input:focus, .campo-categoria select:focus{
     border-color: #5A3B24;
 }
 
@@ -399,6 +406,9 @@ input.busca{
 @media(min-width: 481px){
     .hero::before {
         background-image: url('../imagens/background-roupas-no-cabide.png'); /* Substitua pelo caminho da sua imagem */
+    }
+    .toolbar {
+        flex-direction: row;
     }
 }
 
