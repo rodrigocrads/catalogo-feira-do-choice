@@ -199,6 +199,7 @@ input.busca {
 }
 
 .btn-whatsapp{
+    max-width: 350px;
     width:100%;
     border:none;
     padding:12px;
@@ -213,6 +214,7 @@ input.busca {
     gap: 8px;
     position:relative;
     z-index: 2;
+    margin: auto;
 }
 
 .btn-secundario{
