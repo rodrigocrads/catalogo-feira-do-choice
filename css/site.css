@@ -57,7 +57,7 @@ body{
     width: 100%; 
     height: 100%;
     
-    opacity: 0.3;
+    opacity: 0.5;
     z-index: -1;
 }
 
@@ -405,7 +405,7 @@ input.busca {
 
 @media(min-width: 481px){
     .hero::before {
-        background-image: url('../imagens/background-roupas-no-cabide.png'); /* Substitua pelo caminho da sua imagem */
+        background-image: url('../imagens/banner-fundo-brecho-choice.png');
     }
     .toolbar {
         flex-direction: row;
